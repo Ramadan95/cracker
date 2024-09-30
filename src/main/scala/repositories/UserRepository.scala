@@ -16,7 +16,7 @@ class UserRepository[F[_]: Async](xa: Transactor[F]) {
 
   def findByUsername(username: String): F[Option[User]] = {
     sql"""
-      SELECT id, username, password, email, description
+      SELECT *
       FROM users
       WHERE username = $username
     """.query[User].option.transact(xa)

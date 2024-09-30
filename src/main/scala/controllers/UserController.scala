@@ -67,17 +67,6 @@ class UserController[F[_]: Async](userService: UserService[F]) extends Http4sDsl
           logger.error(e)("Ошибка при входе") *> InternalServerError("Произошла ошибка при входе")
       }
 
-    case req@GET -> Root / "cabinet" =>
-      req.cookies.find(_.name == "username") match {
-        case Some(cookie) =>
-          // Load the template and replace the placeholder {{username}}
-          val htmlContent = Source.fromResource("static/cabinet.html").getLines().mkString("\n")
-          val personalizedContent = htmlContent.replace("{{username}}", cookie.content)
-          Ok(personalizedContent).map(_.putHeaders(`Content-Type`(MediaType.text.html)))
-        case None =>
-          SeeOther(Location(uri"/login"))
-      }
-
     case GET -> Root / "logout" =>
       // Удаление cookie и перенаправление на главную страницу
       SeeOther(Location(uri"/")).map(_.removeCookie("username"))
