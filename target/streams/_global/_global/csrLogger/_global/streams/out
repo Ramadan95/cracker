@@ -1,0 +1,16 @@
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-dsl_2.13/0.23.22/http4s-dsl_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-circe_2.13/0.23.22/http4s-circe_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-blaze-server_2.13/0.23.22/http4s-blaze-server_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-blaze-client_2.13/0.23.22/http4s-blaze-client_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-twirl_2.13/0.23.22/http4s-twirl_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-blaze-client_2.13/0.23.22/http4s-blaze-client_2.13-0.23.22.pom.sha1
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-blaze-server_2.13/0.23.22/http4s-blaze-server_2.13-0.23.22.pom.sha1
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-twirl_2.13/0.23.22/http4s-twirl_2.13-0.23.22.pom.sha1
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-blaze-client_2.13/0.23.22/http4s-blaze-client_2.13-0.23.22.pom
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-blaze-server_2.13/0.23.22/http4s-blaze-server_2.13-0.23.22.pom
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-twirl_2.13/0.23.22/http4s-twirl_2.13-0.23.22.pom
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-blaze-client_2.13/0.23.22/http4s-blaze-client_2.13-0.23.22.pom.sha1
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-twirl_2.13/0.23.22/http4s-twirl_2.13-0.23.22.pom.sha1
+[debug] downloaded https://oss.sonatype.org/service/local/repositories/releases/content/org/http4s/http4s-blaze-server_2.13/0.23.22/http4s-blaze-server_2.13-0.23.22.pom.sha1
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-core_2.13/0.23.22/http4s-core_2.13-0.23.22.pom
+[debug] downloaded https://repo1.maven.org/maven2/org/http4s/http4s-jawn_2.13/0.23.22/http4s-jawn_2.13-0.23.22.pom
