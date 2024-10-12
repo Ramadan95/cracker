@@ -1,10 +1,9 @@
-// src/main/scala/app/MainApp.scala
 package app
 
 import cats.effect._
 import org.http4s.implicits._
 import org.http4s.server.blaze._
-import controllers.{UserController, MainController}
+import controllers.{UserController, MainController, TestController}
 import database.Database
 import repositories.UserRepository
 import services.UserService
@@ -19,10 +18,12 @@ object MainApp extends IOApp {
       val userService    = new UserService[IO](userRepo)
       val userController = new UserController[IO](userService)
       val mainController = new MainController[IO]()
+      val testController = new TestController[IO]()
 
       val httpApp = (
         mainController.routes <+>
-          userController.routes
+          userController.routes <+>
+          testController.routes
         ).orNotFound
 
       BlazeServerBuilder[IO]

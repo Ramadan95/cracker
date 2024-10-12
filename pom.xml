@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+                             http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <!-- Координаты проекта -->
+    <groupId>com.example</groupId>
+    <artifactId>ScalaCatsApp</artifactId>
+    <version>0.1.0</version>
+    <packaging>jar</packaging>
+
+    <name>ScalaCatsApp</name>
+    <description>Приложение на Scala с использованием Cats, HTTP4S и Doobie</description>
+    <url>http://www.example.com</url>
+
+    <!-- Свойства проекта -->
+    <properties>
+        <!-- Версия Scala -->
+        <scala.version>2.13.15</scala.version>
+        <!-- Бинарная версия Scala (для имен артефактов) -->
+        <scala.binary.version>2.13</scala.binary.version>
+        <!-- Версия плагина Scala Maven -->
+        <scala-maven-plugin.version>4.7.1</scala-maven-plugin.version>
+        <!-- Версия Java (установите в соответствии с вашим проектом) -->
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <!-- Репозитории (если необходимо) -->
+    <repositories>
+        <repository>
+            <id>central</id>
+            <name>Maven Central</name>
+            <url>https://repo.maven.apache.org/maven2</url>
+        </repository>
+    </repositories>
+
+    <!-- Зависимости проекта -->
+    <dependencies>
+        <!-- Cats Effect -->
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>cats-effect_${scala.binary.version}</artifactId>
+            <version>3.5.1</version>
+        </dependency>
+
+        <!-- HTTP4S Blaze Server -->
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>http4s-blaze-server_${scala.binary.version}</artifactId>
+            <version>0.23.12</version>
+        </dependency>
+
+        <!-- HTTP4S Blaze Client -->
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>http4s-blaze-client_${scala.binary.version}</artifactId>
+            <version>0.23.12</version>
+        </dependency>
+
+        <!-- HTTP4S Circe -->
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>http4s-circe_${scala.binary.version}</artifactId>
+            <version>0.23.12</version>
+        </dependency>
+
+        <!-- HTTP4S DSL -->
+        <dependency>
+            <groupId>org.http4s</groupId>
+            <artifactId>http4s-dsl_${scala.binary.version}</artifactId>
+            <version>0.23.12</version>
+        </dependency>
+
+        <!-- Circe Generic -->
+        <dependency>
+            <groupId>io.circe</groupId>
+            <artifactId>circe-generic_${scala.binary.version}</artifactId>
+            <version>0.14.5</version>
+        </dependency>
+
+        <!-- Circe Literal -->
+        <dependency>
+            <groupId>io.circe</groupId>
+            <artifactId>circe-literal_${scala.binary.version}</artifactId>
+            <version>0.14.5</version>
+        </dependency>
+
+        <!-- Doobie Core -->
+        <dependency>
+            <groupId>org.tpolecat</groupId>
+            <artifactId>doobie-core_${scala.binary.version}</artifactId>
+            <version>1.0.0-RC4</version>
+        </dependency>
+
+        <!-- Doobie Postgres -->
+        <dependency>
+            <groupId>org.tpolecat</groupId>
+            <artifactId>doobie-postgres_${scala.binary.version}</artifactId>
+            <version>1.0.0-RC4</version>
+        </dependency>
+
+        <!-- Doobie Hikari -->
+        <dependency>
+            <groupId>org.tpolecat</groupId>
+            <artifactId>doobie-hikari_${scala.binary.version}</artifactId>
+            <version>1.0.0-RC4</version>
+        </dependency>
+
+        <!-- PostgreSQL JDBC Driver -->
+        <dependency>
+            <groupId>org.postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>42.6.0</version>
+        </dependency>
+
+        <!-- Typesafe Config -->
+        <dependency>
+            <groupId>com.typesafe</groupId>
+            <artifactId>config</artifactId>
+            <version>1.4.2</version>
+        </dependency>
+
+        <!-- Log4Cats SLF4J -->
+        <dependency>
+            <groupId>org.typelevel</groupId>
+            <artifactId>log4cats-slf4j_${scala.binary.version}</artifactId>
+            <version>2.5.0</version>
+        </dependency>
+
+        <!-- Logback Classic -->
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-classic</artifactId>
+            <version>1.2.11</version>
+        </dependency>
+    </dependencies>
+
+    <!-- Плагины сборки -->
+    <build>
+        <plugins>
+            <!-- Scala Maven Plugin для компиляции Scala-кода -->
+            <plugin>
+                <groupId>net.alchim31.maven</groupId>
+                <artifactId>scala-maven-plugin</artifactId>
+                <version>${scala-maven-plugin.version}</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>add-source</goal>
+                            <goal>compile</goal>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <scalaVersion>${scala.version}</scalaVersion>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Compiler Plugin (если требуется для совместимости) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.10.1</version>
+                <configuration>
+                    <source>${maven.compiler.source}</source>
+                    <target>${maven.compiler.target}</target>
+                </configuration>
+            </plugin>
+
+            <!-- Maven Shade Plugin (опционально, для создания uber-jar) -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>3.4.1</version>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>shade</goal>
+                        </goals>
+                        <configuration>
+                            <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <transformers>
+                                <transformer implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
+                                    <mainClass>com.example.Main</mainClass> <!-- Замените на ваш главный класс -->
+                                </transformer>
+                            </transformers>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
